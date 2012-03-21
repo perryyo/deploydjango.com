@@ -3,6 +3,7 @@
 
 AUTHOR = u"Randall Degges"
 SITENAME = u"Deploy Django"
+SITESUBTITLE = u"Useful patterns for deploying Django on Heroku."
 SITEURL = '/'
 
 TIMEZONE = 'America/Los_Angeles'
