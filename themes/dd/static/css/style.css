@@ -1,0 +1,14 @@
+#banner nav {
+	background: #000305;
+	font-size: 1.143em;
+	height: 40px;
+	line-height: 30px;
+	margin: 0 auto 2em auto;
+	padding: 0;
+	text-align: center;
+	width: 800px;
+	
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
