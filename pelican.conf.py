@@ -8,7 +8,7 @@ SITEURL = '/'
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG='en'
-
+THEME='./themes/dd'
 
 # Blogroll
 LINKS =  (
