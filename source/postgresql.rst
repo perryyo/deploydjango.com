@@ -194,9 +194,9 @@ Creating Read Slaves
 Creating `read slaves
 <http://en.wikipedia.org/wiki/Master/slave_(technology)>`_ is a popular way to
 help scale read requests across a cluster of database servers. Luckily, Heroku
-makes this process extremely simple using their `follow
+makes this process extremely simple with their `follow
 <https://devcenter.heroku.com/articles/heroku-postgresql#follow_beta>`_
-functionality.
+feature.
 
 Let's assume your application currently has a single database,
 ``HEROKU_POSTGRESQL_GREEN``. In order to create a new read slave database, you
