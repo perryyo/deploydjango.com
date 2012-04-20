@@ -6,8 +6,8 @@ Heroku application setup, and that you are using the `Heroku CLI tool
 <https://toolbelt.heroku.com/>`_.
 
 
-Bootstrap a Database
-********************
+Bootstraping a Database
+***********************
 
 To get started, let's bootstrap a new PostgreSQL server instance. In the
 example below, we'll create a free (shared) PostgreSQL database:
@@ -64,8 +64,8 @@ database we created, and the paid database:
   This is because paid databases allow you to directly connect to them.
 
 
-Configure Django to Use PostgreSQL
-**********************************
+Configuring Django to Use PostgreSQL
+************************************
 
 Now that we've got a database running, let's configure our Django site to use
 it!
