@@ -10,6 +10,12 @@ service in the world" (`ref <https://postgres.heroku.com/>`_)?
 About
 -----
 
+The `Heroku PostgreSQL service <https://addons.heroku.com/heroku-postgresql>`_
+allows you to easily create, destroy, resize, backup, restore, and scale your
+database infrastructure both from the command line, via the `Heroku CLI app
+<https://toolbelt.heroku.com/>`_ as well as from the web using `Heroku's
+standalone site <http://postgres.heroku.com/>`_.
+
 Setup
 -----
 
