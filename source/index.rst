@@ -13,4 +13,4 @@ Contents:
 
 
   quickstart
-  postgresql/configuration
+  postgresql
