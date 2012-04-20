@@ -96,6 +96,19 @@ databases defined, a free (shared) database, and a paid database.
     You can find a complete list of the available paid Heroku databases on
     their database pricing page: https://postgres.heroku.com/pricing
 
+As you can also see--there are obviously some differences between the shared
+database we created, and the paid database:
+
+- The shared database is created insantly (there is no delay), while the paid
+  database is provisioned on the fly, and takes a minute or so to become available.
+
+- The paid database lists connection info while the shared database does not.
+  This is because paid databases allow you to directly connect to them.
+
+
+Configure Django to Use PostgreSQL
+**********************************
+
 
 Best Practices
 --------------
