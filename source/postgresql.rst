@@ -1,5 +1,5 @@
 PostgreSQL Configuration
-########################
+========================
 
 One of Heroku's oldest and most popular addons is their `PostgreSQL Addon
 <http://devcenter.heroku.com/categories/heroku-postgres>`_. Did you know that
