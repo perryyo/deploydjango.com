@@ -7,7 +7,7 @@ Heroku's hosted PostgreSQL service is "the largest and most reliable Postgres
 service in the world"?
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     about.rst
     setup.rst
