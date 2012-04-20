@@ -195,7 +195,7 @@ Creating `read slaves
 <http://en.wikipedia.org/wiki/Master/slave_(technology)>`_ is a popular way to
 help scale read requests across a cluster of database servers. Luckily, Heroku
 makes this process extremely simple using their `follow
-<https://devcenter.heroku.com/articles/heroku-postgresql#follow_beta`_
+<https://devcenter.heroku.com/articles/heroku-postgresql#follow_beta>`_
 functionality.
 
 Let's assume your application currently has a single database,
