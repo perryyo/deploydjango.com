@@ -1,2 +1,3 @@
 # Ignore our output directory. This is where all generated files go.
 output
+build
