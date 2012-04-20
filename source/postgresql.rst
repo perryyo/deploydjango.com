@@ -145,6 +145,37 @@ default, we could do so by running the ``pg:promote`` command:
 
 Now our ronin database is the default!
 
+The next thing we need to do is tell Django to use our new Heroku database.
+What we're going to do is set up Django just like we would for normal
+PostgreSQL database--with one exception: instead of hard-coding in our database
+credentials--we'll simply grab them from the environment!
+
+.. code-block:: python
+
+    # settings.py
+    from os import environ
+    from urlparse import urlparse
+
+    if environ.has_key('DATABASE_URL'):
+        url = urlparse(environ['DATABASE_URL'])
+        DATABASES['default'] = {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': url.path[1:],
+            'USER': url.username,
+            'PASSWORD': url.password,
+            'HOST': url.hostname,
+            'PORT': url.port,
+        }
+
+Also: don't forget to add ``psycopg2`` to your ``requirements.txt`` file, since
+the ``psycopg2`` library is required for Django to interface with PostgreSQL:
+
+.. code-block:: none
+
+    # requirements.txt
+    psycopg2==2.4.5
+    ...
+
 
 Best Practices
 --------------
