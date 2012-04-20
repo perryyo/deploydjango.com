@@ -176,6 +176,10 @@ the ``psycopg2`` library is required for Django to interface with PostgreSQL:
     psycopg2==2.4.5
     ...
 
+Now that we've got Django configured to use whichever database is currently set
+to ``DATABASE_URL``, we can easily switch our primary database without changing
+a single line of code!
+
 
 Best Practices
 --------------
