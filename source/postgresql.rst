@@ -126,7 +126,7 @@ specify our newly created database information. Let's quickly take a look:
 As you can see, we've now got 3 environment variables defined. One for each our
 our databases, and one extra variable, ``DATABASE_URL``. The ``DATABASE_URL``
 variable is a special variable, in that its only purpose is to provide a
-standardized 'default' database for your applications.
+standardized 'default' database for your application.
 
 At the moment, it looks like our shared database (``SHARED_DATABASE_URL``) is
 set as the default database (``DATABASE_URL``). If we wanted to set our larger
