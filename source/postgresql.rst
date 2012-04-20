@@ -76,17 +76,17 @@ To verify that our database(s) exist, we can now run the ``pg:info`` command:
     $ heroku pg:info
     === SHARED_DATABASE (DATABASE_URL)
     Data Size    (empty)
-    === HEROKU_POSTGRESQL_IVORY
+    === HEROKU_POSTGRESQL_GREEN_URL
     Plan         Ronin
     Status       preparing
     Data Size    -1 B
     Tables       -1
     PG Version   ?
     Created      2012-04-20 07:26 UTC
-    Conn Info    "host=ec2-xx-xx-xx-xx.compute-1.amazonaws.com
-                 port=5432 dbnamexxxxxxxx=
-                 user=xxxx sslmode=require
-                 password=xxxxxxxxxxxxxxx"
+    Conn Info    "host=ec2-yy-yy-yy-yy.compute-1.amazonaws.com
+                 port=5432 dbname=yyyyy
+                 user=yyyyy sslmode=require
+                 password=yyyyy"
     Maintenance  not required
 
 As you can see from the output above, our Heroku application now has two
@@ -108,6 +108,42 @@ database we created, and the paid database:
 
 Configure Django to Use PostgreSQL
 **********************************
+
+Now that we've got a database running, let's configure our Django site to use
+it!
+
+Like all other Heroku addons--when we created our database in the previous
+section, Heroku added a couple environment variables to our application, which
+specify our newly created database information. Let's quickly take a look:
+
+.. code-block:: console
+
+    $ heroku config
+    DATABASE_URL                => postgres://xxxxx:xxxxx@ec2-xx-xx-xx-xx.compute-1.amazonaws.com/xxxxx
+    HEROKU_POSTGRESQL_GREEN_URL => postgres://yyyyy:yyyyy@ec2-yy-yy-yy-yy.compute-1.amazonaws.com:5432/yyyyy
+    SHARED_DATABASE_URL         => postgres://xxxxx:xxxxx@ec2-xx-xx-xx-xx.compute-1.amazonaws.com/xxxxx
+
+As you can see, we've now got 3 environment variables defined. One for each our
+our databases, and one extra variable, ``DATABASE_URL``. The ``DATABASE_URL``
+variable is a special variable, in that its only purpose is to provide a
+standardized 'default' database for your applications.
+
+At the moment, it looks like our shared database (``SHARED_DATABASE_URL``) is
+set as the default database (``DATABASE_URL``). If we wanted to set our larger
+(and more performant) database (``HEROKU_POSTGRESQL_GREEN_URL``) as the
+default, we could do so by running the ``pg:promote`` command:
+
+.. code-block:: console
+
+    $ heroku pg:promote HEROKU_POSTGRESQL_GREEN
+    -----> Promoting HEROKU_POSTGRESQL_GREEN to DATABASE_URL... done
+
+    $ heroku config
+    DATABASE_URL                => postgres://yyyyy:yyyyy@ec2-yy-yy-yy-yy.compute-1.amazonaws.com:5432/yyyyy
+    HEROKU_POSTGRESQL_GREEN_URL => postgres://yyyyy:yyyyy@ec2-yy-yy-yy-yy.compute-1.amazonaws.com:5432/yyyyy
+    SHARED_DATABASE_URL         => postgres://xxxxx:xxxxx@ec2-xx-xx-xx-xx.compute-1.amazonaws.com/xxxxx
+
+Now our ronin database is the default!
 
 
 Best Practices
