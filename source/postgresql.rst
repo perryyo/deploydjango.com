@@ -184,8 +184,8 @@ a single line of code!
 Destroying a Database
 *********************
 
-If you'd like to remove a database that's you've already provisioned, you can
-do so via the ``addons:remove`` command:
+If you'd like to remove a database that you've already provisioned, you can do
+so via the ``addons:remove`` command:
 
 .. code-block:: console
 
