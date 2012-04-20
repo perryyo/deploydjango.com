@@ -43,6 +43,60 @@ Heroku's PostgreSQL service is an excellent choice for you if:
 Setup
 -----
 
+Through the rest of this article, I'll assume that you've already got a working
+Heroku application setup, and that you are using the `Heroku CLI tool
+<https://toolbelt.heroku.com/>`_.
+
+
+Bootstrap a Database
+********************
+
+To get started, let's bootstrap a new PostgreSQL server instance. In the
+example below, we'll create a free (shared) PostgreSQL database:
+
+.. code-block:: console
+
+    $ heroku addons:add shared-database
+    ----> Adding shared-database to deploydjango... done, v2 (free)
+
+If we wanted to create a larger (paid) database, we could run the following command:
+
+.. code-block:: console
+
+    $ heroku addons:add heroku-postgresql:ronin
+    ----> Adding heroku-postgresql:ronin to deploydjango... done, v3 ($200/mo)
+          Attached as HEROKU_POSTGRESQL_IVORY
+          The database should be available in 3-5 minutes
+          Use `heroku pg:wait` to track status
+
+To verify that our database(s) exist, we can now run the ``pg:info`` command:
+
+.. code-block:: console
+
+    $ heroku pg:info
+    === SHARED_DATABASE (DATABASE_URL)
+    Data Size    (empty)
+    === HEROKU_POSTGRESQL_IVORY
+    Plan         Ronin
+    Status       preparing
+    Data Size    -1 B
+    Tables       -1
+    PG Version   ?
+    Created      2012-04-20 07:26 UTC
+    Conn Info    "host=ec2-xx-xx-xx-xx.compute-1.amazonaws.com
+                 port=5432 dbnamexxxxxxxx=
+                 user=xxxx sslmode=require
+                 password=xxxxxxxxxxxxxxx"
+    Maintenance  not required
+
+As you can see from the output above, our Heroku application now has two
+databases defined, a free (shared) database, and a paid database.
+
+.. note::
+    You can find a complete list of the available paid Heroku databases on
+    their database pricing page: https://postgres.heroku.com/pricing
+
+
 Best Practices
 --------------
 
