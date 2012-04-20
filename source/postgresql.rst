@@ -7,6 +7,19 @@ Heroku's hosted PostgreSQL service is "the largest and most reliable Postgres
 service in the world" (`ref <https://postgres.heroku.com/>`_).
 
 
+About
+-----
+
+Setup
+-----
+
+Best Practices
+--------------
+
+Resources
+---------
+
+
 PyPI Dependencies
 -----------------
 
