@@ -1,0 +1,126 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PostgreSQL Configuration &mdash; Deploy Django 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/jinja.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Deploy Django 1 documentation" href="../index.html" />
+    <link rel="prev" title="Heroku Django Template" href="../quickstart.html" /> 
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="postgresql-configuration">
+<h1>PostgreSQL Configuration<a class="headerlink" href="#postgresql-configuration" title="Permalink to this headline">¶</a></h1>
+<p>One of Heroku&#8217;s oldest and most popular addons is their <a class="reference external" href="http://devcenter.heroku.com/categories/heroku-postgres">PostgreSQL Addon</a>. Did you know that
+Heroku&#8217;s hosted PostgreSQL service is &#8220;the largest and most reliable Postgres
+service in the world&#8221; (<a class="reference external" href="https://postgres.heroku.com/">ref</a>).</p>
+<div class="section" id="pypi-dependencies">
+<h2>PyPI Dependencies<a class="headerlink" href="#pypi-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Before we can get Django working with Heroku&#8217;s PostgreSQL service, we need to
+install the <a class="reference external" href="http://initd.org/psycopg/">psycopg2</a> PyPI module. The first
+thing you&#8217;ll want to do is install <tt class="docutils literal"><span class="pre">psycopg2</span></tt> locally into your project&#8217;s
+virtualenv:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> workon myproject
+<span class="go">(myproject) $ pip install -U psycopg2</span>
+<span class="go">Downloading/unpacking psycopg2</span>
+<span class="go">  Running setup.py egg_info for package psycopg2</span>
+<span class="go">    no previously-included directories found matching &#39;doc/src/_build&#39;</span>
+<span class="go">Installing collected packages: psycopg2</span>
+<span class="go">  Running setup.py install for psycopg2</span>
+
+<span class="go">    no previously-included directories found matching &#39;doc/src/_build&#39;</span>
+<span class="go">Successfully installed psycopg2</span>
+<span class="go">Cleaning up...</span>
+<span class="go">(myproject) $</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you&#8217;re running Ubuntu, you&#8217;ll need to install the <tt class="docutils literal"><span class="pre">libpq-dev</span></tt> package.</p>
+</div>
+<p>Once you&#8217;ve got <tt class="docutils literal"><span class="pre">psycopg2</span></tt> installed in your virtualenv, you&#8217;ll want to run
+<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></tt> to confirm it&#8217;s installed and working as expected:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">(myproject) $ pip freeze</span>
+<span class="go">psycopg2==2.4.4</span>
+<span class="go">wsgiref==0.1.2</span>
+<span class="go">(myproject) $</span>
+</pre></div>
+</div>
+<p>Assuming you see something like <tt class="docutils literal"><span class="pre">psycopg2==2.4.4</span></tt>, you&#8217;ll then want to add
+that line to your project&#8217;s <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> file:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">(myproject) $ echo &quot;psycopg2==2.4.4&quot; &gt;&gt; requirements.txt</span>
+<span class="go">(myproject) $</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PostgreSQL Configuration</a><ul>
+<li><a class="reference internal" href="#pypi-dependencies">PyPI Dependencies</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../quickstart.html" title="previous chapter">Heroku Django Template</a></li>
+  </ul></li>
+</ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2012, Randall Degges.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    </div>
+  </body>
+</html>
