@@ -181,6 +181,23 @@ to ``DATABASE_URL``, we can easily switch our primary database without changing
 a single line of code!
 
 
+Destroying a Database
+*********************
+
+If you'd like to remove a database that's you've already provisioned, you can
+do so via the ``addons:remove`` command:
+
+.. code-block:: console
+
+    $ heroku addons:remove HEROKU_POSTGRESQL_GREEN
+     !    WARNING: Potentially Destructive Action
+     !    This command will affect the app: deploydjango
+     !    To proceed, type "deploydjango" or re-run this command with --confirm deploydjango
+
+    > deploydjango
+    ----> Removing HEROKU_POSTGRESQL_GREEN from deploydjango... done, v9 ($200/mo)
+
+
 Advanced
 --------
 
