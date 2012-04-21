@@ -61,7 +61,9 @@ database we created, and the paid database:
   database is provisioned on the fly, and takes a minute or so to become available.
 
 - The paid database lists connection info while the shared database does not.
-  This is because paid databases allow you to directly connect to them.
+  This is because paid databases allow you to directly connect to them using
+  the `psql <http://www.postgresql.org/docs/8.4/static/app-psql.html>`_ tool
+  like you would with any normal PostgreSQL database.
 
 
 Configuring Django to Use PostgreSQL
