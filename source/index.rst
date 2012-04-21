@@ -40,6 +40,6 @@ to support millions of users.
 Topics:
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
     postgresql/index.rst
