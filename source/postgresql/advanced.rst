@@ -186,3 +186,28 @@ As time progresses, and we gradually get more backups, they'll show up in the
 As a quick note: all manually captured backups display with a ``b`` prefix in
 the ``heroku pgbackups`` listing, while all automatically captured backups
 display with an ``a`` prefix.
+
+
+Downloading Your Backups
+************************
+
+So you've got a few database backups, and you'd like to download them--no
+problem! Assuming you've got the following backup available:
+
+.. code-block:: console
+
+    $ heroku pgbackups
+    ID   | Backup Time         | Size       | Database
+    -----+---------------------+------------+----------------
+    b001 | 2012/04/20 23:09.50 | 918.0bytes | SHARED_DATABASE
+
+You can create a publicly available download URL from `Amazon S3
+<http://aws.amazon.com/s3/>`_ (which is good for 10 minutes) by running:
+
+.. code-block:: console
+
+    $ heroku pgbackups:url b001
+    "https://s3.amazonaws.com/hkpgbackups/app4444444@heroku.com/b001.dump?AWSAccessKeyId=test&Expires=1334989747&Signature=Juy%2FKGQvJ5zPLknUUOFSEAoEGyc%3D"
+
+Which you can then download directly to your computer using ``wget``, ``curl``,
+or any other standard tool.
