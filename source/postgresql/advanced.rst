@@ -211,3 +211,43 @@ You can create a publicly available download URL from `Amazon S3
 
 Which you can then download directly to your computer using ``wget``, ``curl``,
 or any other standard tool.
+
+
+Restoring From a Backup
+***********************
+
+While backing up your database is always a good idea, your backups will do you
+no good unless you know how to restore from the backup when things go wrong.
+
+Assuming you have the following backup available:
+
+.. code-block:: console
+
+    $ heroku pgbackups
+    ID   | Backup Time         | Size       | Database
+    -----+---------------------+------------+----------------
+    b001 | 2012/04/20 23:09.50 | 918.0bytes | SHARED_DATABASE
+
+You can restore your backup (``b001`` in this case) to *any* of your available
+databases using the ``pgbackups:restore`` command:
+
+.. code-block:: console
+
+    $ heroku pgbackups:restore SHARED_DATABASE b001
+
+    SHARED_DATABASE (DATABASE_URL)  <---restore---  b001
+                                                    SHARED_DATABASE
+                                                    2012/04/20 23:09.50
+                                                    918.0bytes
+
+     !    WARNING: Potentially Destructive Action
+     !    This command will affect the app: deploydjango
+     !    To proceed, type "deploydjango" or re-run this command with --confirm deploydjango
+
+    > deploydjango
+
+    Retrieving... done
+    Restoring... done
+
+.. note::
+    The restoration process make take a few minutes if your backups are large.
