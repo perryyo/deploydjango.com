@@ -94,7 +94,7 @@ pygments_style = 'sphinx'
 html_theme = 'sphinxdoc'
 
 # The CSS stylesheet to use.
-#html_style = 'deploydjango.css'
+html_style = 'deploydjango.css'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
