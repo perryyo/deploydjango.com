@@ -54,7 +54,7 @@ useful:
 Duplicating a database using Heroku is really simple thanks to Heroku's
 `fork <https://devcenter.heroku.com/articles/heroku-postgresql#fork_beta>`_
 feature. To duplicate (fork) a copy of your production database,
-``HEROKU_POSTGRESQL_GREEN``, you can create a new databsae using the ``--fork``
+``HEROKU_POSTGRESQL_GREEN``, you can create a new database using the ``--fork``
 option:
 
 .. code-block:: console
