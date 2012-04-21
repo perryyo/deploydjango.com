@@ -1,0 +1,2 @@
+goldenarch==0.0.5
+Sphinx==1.1.3
