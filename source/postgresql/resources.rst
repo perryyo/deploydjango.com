@@ -39,7 +39,7 @@ The only tutorial worth reading is the `official PostgreSQL documentation
 verbose and a bit difficult to read through sequentially, it is very well
 written and is the first place you should look for answers to your questions.
 
-If you've never worked with PostgreSQL before, or lack basic understand of
+If you've never worked with PostgreSQL before, or lack a basic understanding of
 relational databases, you should probably read through one of the books
 linked above instead, as you'll have a much easier time learning the system and
 getting started.
