@@ -182,3 +182,7 @@ As time progresses, and we gradually get more backups, they'll show up in the
     (``DATABASE_URL``). If you'd like to backup another database, you can do so
     by specifying its name, for example: ``heroku pgbackups:capture
     HEROKU_POSTGRESQL_GREEN``.
+
+As a quick note: all manually captured backups display with a ``b`` prefix in
+the ``heroku pgbackups`` listing, while all automatically captured backups
+display with an ``a`` prefix.
