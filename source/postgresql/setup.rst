@@ -106,9 +106,9 @@ default, we could do so by running the ``pg:promote`` command:
 Now our ronin database is the default!
 
 The next thing we need to do is tell Django to use our new Heroku database.
-What we're going to do is set up Django just like we would for normal
-PostgreSQL database--with one exception: instead of hard-coding in our database
-credentials--we'll simply grab them from the environment!
+What we're going to do is tell Django to use our ``DATABASE_URL`` database just
+like we would any other database, with one exception: instead of hard-coding in
+our database credentials--we'll simply grab them from the environment!
 
 .. code-block:: python
 
