@@ -3,7 +3,7 @@ Deploy Django
 
 *Useful patterns for deploying Django on Heroku.*
 
-Sections:
+Topics:
 
 .. toctree::
     :maxdepth: 2
