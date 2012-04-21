@@ -115,3 +115,64 @@ To view the streaming logs, you can simply run:
 ``heroku logs --tail --ps postgres``. If you'd like to just view the most
 recent logs, you can run the same command without the optional ``--tail``
 argument: ``heroku logs --ps postgres``.
+
+
+Backing Up Your Database
+************************
+
+Backing up your database is incredibly important, but not always easy to do. To
+combat the complexity of backing up your database, Heroku created their
+extremely useful `pgbackups addon <https://addons.heroku.com/pgbackups>`_.
+
+Incredibly, all of the pgbackups addon plans are completely free!
+
+To get started, we'll use the largest available backup plan: auto-month. This
+plan will:
+
+- Automatically backup your ``DATABASE_URL`` database every night.
+- Retain 7 daily backups.
+- Retain 5 weekly backups.
+- Retain 10 manual backups.
+
+To get it going, install the addon:
+
+.. code-block:: console
+
+    $ heroku addons:add pgbackups:auto-month
+    ----> Adding pgbackups:auto-month to deploydjango... done, v14 (free)
+          You can now use "pgbackups" to backup your databases or import an external backup.
+
+Once you've got the addon installed, Heroku will start automatically backing up
+your primary database each day.
+
+To view a list of your available backups, you can run the ``pgbackups``
+command. Since we just installed the auto-month backup plan, however, we've got
+no existing backups:
+
+.. code-block:: console
+
+    $ heroku pgbackups
+     !    No backups. Capture one with `heroku pgbackups:capture`.
+
+Let's fix that right now by forcing a manual backup:
+
+.. code-block:: console
+
+    $ heroku pgbackups:capture
+
+    SHARED_DATABASE (DATABASE_URL)  ----backup--->  b001
+
+    Capturing... done
+    Storing... done
+
+Now, if we run the ``pgbackups`` command again, we should see:
+
+.. code-block:: console
+
+    $ heroku pgbackups
+    ID   | Backup Time         | Size       | Database
+    -----+---------------------+------------+----------------
+    b001 | 2012/04/20 23:09.50 | 918.0bytes | SHARED_DATABASE
+
+As time progresses, and we gradually get more backups, they'll show up in the
+``pgbackups`` list.
