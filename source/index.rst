@@ -38,7 +38,7 @@ not only deploy your Django sites, but also to maintain, grow, and scale them
 to support millions of users.
 
 .. note::
-    This still is still under rapid development. Please send any suggestions
+    This site is still under rapid development. Please send any suggestions
     (or requests) to rdegges@gmail.com.
 
 
