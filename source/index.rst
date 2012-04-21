@@ -37,7 +37,9 @@ to support millions of users.
     This still is still under rapid development. Please send any suggestions
     (or requests) to rdegges@gmail.com.
 
-Topics:
+
+Topics
+------
 
 .. toctree::
     :maxdepth: 3
