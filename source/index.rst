@@ -8,5 +8,4 @@ Sections:
 .. toctree::
     :maxdepth: 2
 
-    quickstart
     postgresql/index.rst
