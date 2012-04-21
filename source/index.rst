@@ -3,6 +3,10 @@ Deploy Django
 
 *Useful patterns for deploying Django on Heroku.*
 
+
+Welcome
+-------
+
 `Deploying Django <http://rdegges.com/deploying-django>`_ is hard work. No
 matter how much experience you have, deployment is always a difficult task as
 it involves so many factors. Among other things, you have to:
