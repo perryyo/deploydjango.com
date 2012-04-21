@@ -98,3 +98,20 @@ it writable, all we do is run the ``pg:unfollow`` command, like so:
 
     > deploydjango
     Unfollowing... done
+
+
+View Slow Queries
+*****************
+
+A big part of writing good code is knowing when you do things wrong. Slow
+database queries, in particular, are probably the greatest cause of poor site
+performance.
+
+Luckily for us, Heroku's logging system allows you to easily view a stream of
+slow query logs directly from your console. Any query that takes longer than
+50ms to execute will be dumped into the log output.
+
+To view the streaming logs, you can simply run:
+``heroku logs --tail --ps postgres``. If you'd like to just view the most
+recent logs, you can run the same command without the optional ``--tail``
+argument: ``heroku logs --ps postgres``.
