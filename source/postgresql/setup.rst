@@ -52,7 +52,7 @@ databases defined, a free (shared) database, and a paid database.
 
 .. note::
     You can find a complete list of available Heroku databases plans on their
-    pricing page: https://postgres.heroku.com/pricing
+    `pricing page <https://postgres.heroku.com/pricing>`_.
 
 As you can also see--there are obviously some differences between the shared
 database we created, and the paid database:
