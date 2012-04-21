@@ -1,7 +1,0 @@
-/* Import the sphinxdoc CSS. */
-@import url('/_static/sphinxdoc.css');
-
-/* Center the footer. */
-div.footer {
-  text-align: center;
-}
