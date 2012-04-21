@@ -175,4 +175,4 @@ Now, if we run the ``pgbackups`` command again, we should see:
     b001 | 2012/04/20 23:09.50 | 918.0bytes | SHARED_DATABASE
 
 As time progresses, and we gradually get more backups, they'll show up in the
-``pgbackups`` list.
+``pgbackups`` listing.
