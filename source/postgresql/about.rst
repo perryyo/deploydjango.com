@@ -27,7 +27,5 @@ Heroku's PostgreSQL service is an excellent choice for you if:
   PostgreSQL database (no vendor lock-in).
 
 - Your application is running anywhere on the internet; Heroku's PostgreSQL
-  service is a standalone service, it works just like any normal PostgreSQL
+  service is a standalone service and works just like any normal PostgreSQL
   server, so you don't need to make any application changes.
-
-
