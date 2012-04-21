@@ -1,5 +1,5 @@
 Resources
---------
+---------
 
 PostgreSQL is a complex database system, and no matter how much experience you
 have with it, there will always be a lot left to learn. Below are some
