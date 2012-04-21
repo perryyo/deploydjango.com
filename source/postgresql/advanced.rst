@@ -73,3 +73,28 @@ whatever you want.
 
     Forked databases do **NOT** stay up-to-date with the database they were
     forked from.
+
+
+Promoting a Slave Database to a Master Database
+***********************************************
+
+Let's say you're in a situation where you need to make one of your read slaves
+writable (as a master). Heroku makes this process extremely simple using their
+`unfollow <https://devcenter.heroku.com/articles/heroku-postgresql#unfollow>`_
+command.
+
+Let's assume you've got a read slave named ``HEROKU_POSTGRESQL_AMBER``. To make
+it writable, all we do is run the ``pg:unfollow`` command, like so:
+
+.. code-block:: console
+
+    $ heroku pg:unfollow HEROKU_POSTGRESQL_AMBER
+     !    HEROKU_POSTGRESQL_AMBER will become writable and no longer
+     !    follow HEROKU_POSTGRESQL_BRONZE. This cannot be undone.
+
+     !    WARNING: Potentially Destructive Action
+     !    This command will affect the app: deploydjango
+     !    To proceed, type "deploydjango" or re-run this command with --confirm deploydjango
+
+    > deploydjango
+    Unfollowing... done
