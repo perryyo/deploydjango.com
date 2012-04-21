@@ -233,7 +233,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'Deploy Django', u'Deploy Django ',
-   u'', 'Deploy Django', 'One line description of project.',
+   u'', 'Deploy Django', 'Useful patterns for deploying Django on Heroku.',
    'Miscellaneous'),
 ]
 
