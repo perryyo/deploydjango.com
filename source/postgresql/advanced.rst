@@ -176,3 +176,9 @@ Now, if we run the ``pgbackups`` command again, we should see:
 
 As time progresses, and we gradually get more backups, they'll show up in the
 ``pgbackups`` listing.
+
+.. note::
+    In the backup example above, we backed up our default database
+    (``DATABASE_URL``). If you'd like to backup another database, you can do so
+    by specifying its name, for example: ``heroku pgbackups:capture
+    HEROKU_POSTGRESQL_GREEN``.
