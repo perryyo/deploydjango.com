@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Deploy Django'
-copyright = u'2012, Randall Degges + Craig Kerstiens'
+copyright = u'2012, Randall Degges, Craig Kerstiens'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
