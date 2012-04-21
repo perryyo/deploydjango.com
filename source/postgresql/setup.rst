@@ -1,8 +1,8 @@
 Setup
 -----
 
-Through the rest of this article, I'll assume that you've already got a working
-Heroku application setup, and that you are using the `Heroku CLI tool
+Through the rest of this article, I'll assume you've already got a working
+Heroku application setup, and that you're using the `Heroku CLI tool
 <https://toolbelt.heroku.com/>`_.
 
 
@@ -51,8 +51,8 @@ As you can see from the output above, our Heroku application now has two
 databases defined, a free (shared) database, and a paid database.
 
 .. note::
-    You can find a complete list of the available paid Heroku databases on
-    their database pricing page: https://postgres.heroku.com/pricing
+    You can find a complete list of available Heroku databases plans on their
+    pricing page: https://postgres.heroku.com/pricing
 
 As you can also see--there are obviously some differences between the shared
 database we created, and the paid database:
