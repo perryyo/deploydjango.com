@@ -1,1 +1,1 @@
-web: make html && goldenarch --dir /app/build/html --port $PORT
+web: make html && goldenarch --dir build/html --port $PORT
