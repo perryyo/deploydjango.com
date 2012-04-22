@@ -88,3 +88,9 @@ Once you've got ``heroku-accounts`` installed, you should be able to run
       accounts:default  #  accounts:default
       accounts:remove   #  accounts:remove
       accounts:set      #  accounts:set
+
+As you can see, ``heroku-accounts`` provides several useful commands, ``add``,
+``default``, ``remove``, and ``set``.
+
+Let's quickly add our personal account, and set is as the **default** on our
+box:
