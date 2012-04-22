@@ -25,4 +25,4 @@ What makes Heroku a perfect choice for hosting is that:
 - You can instantly scale your infrastructure up and down to support large
   amounts of traffic.
 
-- You pay by usage.
+- You pay for usage only, no monthly fees, contracts, or anything else.
