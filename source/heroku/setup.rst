@@ -43,5 +43,6 @@ to:
 To get started, visit: https://toolbelt.heroku.com and follow their
 installation instructions for your specific system.
 
-Don't create any applications or anything else just yet--we'll get to that in a
-bit.
+.. note::
+    Don't create any applications or anything else just yet--we'll get to that
+    in a bit.
