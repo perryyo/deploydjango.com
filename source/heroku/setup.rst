@@ -64,3 +64,27 @@ will allow you to do things like:
 - Add new Heroku accounts in a flash.
 - Easily switch back and fourth amongst your accounts.
 - Handle multiple SSH keys for your accounts *almost* transparently.
+
+To install ``heroku-accounts``, simply run the following command:
+
+.. code-block:: console
+
+    $ heroku plugins:install git://github.com/ddollar/heroku-accounts.git
+    heroku-accounts installed
+
+Once you've got ``heroku-accounts`` installed, you should be able to run
+``heroku help accounts`` to see the usage information:
+
+.. code-block:: console
+
+    $ heroku help accounts
+    Usage: heroku accounts
+
+     list all known accounts
+
+    Additional commands, type "heroku help COMMAND" for more details:
+
+      accounts:add      #  accounts:add
+      accounts:default  #  accounts:default
+      accounts:remove   #  accounts:remove
+      accounts:set      #  accounts:set
