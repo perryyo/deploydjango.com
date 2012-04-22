@@ -5,3 +5,10 @@
 div.footer {
   text-align: center;
 }
+
+/* Center the 'About' sidebar text at the top of our navigation menu (which
+ * only exists on the main page of the site).
+ */
+p.sidebarintro {
+  text-align: center;
+}
