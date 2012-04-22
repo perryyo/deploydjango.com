@@ -26,3 +26,7 @@ What makes Heroku a perfect choice for hosting is that:
   amounts of traffic.
 
 - You pay for usage only: no monthly fees, contracts, or anything else.
+
+Furthermore--Heroku has a large collection of `addons
+<https://addons.heroku.com/>`_ which makes using additional infrastructure
+components easy (you can even write your own).
