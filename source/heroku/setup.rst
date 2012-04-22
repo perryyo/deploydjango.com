@@ -48,7 +48,7 @@ installation instructions for your specific system.
     in a bit.
 
 
-Installing Heroku Accounts - The Best Tool for Managing Multiple Herkou Accounts
+Installing heroku-accounts - The Best Tool for Managing Multiple Herkou Accounts
 ********************************************************************************
 
 We're all programmers here, so I'm going to assume that you probably work on
