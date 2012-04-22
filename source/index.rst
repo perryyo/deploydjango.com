@@ -48,4 +48,5 @@ Topics
 .. toctree::
     :maxdepth: 3
 
+    heroku/index.rst
     postgresql/index.rst
