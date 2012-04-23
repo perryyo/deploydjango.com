@@ -47,16 +47,6 @@ installation instructions for your specific system.
     Don't create any applications or anything else just yet--we'll get to that
     in a bit.
 
-The last thing you need to do is log into your primary Heroku account:
-
-.. code-block:: console
-
-    $ heroku login
-    Enter your Heroku credentials.
-    Email: youremail@yourdomain.com
-    Password (typing will be hidden):
-    Authentication successful.
-
 
 Installing heroku-accounts - The Best Tool for Managing Multiple Herkou Accounts
 ********************************************************************************
