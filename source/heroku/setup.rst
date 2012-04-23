@@ -130,4 +130,4 @@ them now.
 .. note::
     When you add an account using ``heroku-accounts``, ``heroku-accounts`` will
     automatically generate and upload a new SSH key to your Heroku account.
-    This way, you'll be able to push code to any applications you may have created.
+    This way, you'll be able to push code to any of your Heroku applications.
