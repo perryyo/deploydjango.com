@@ -203,7 +203,7 @@ account to use whenever you're working on that project. Pretty nifty, right?
 Creating Your First Heroku Application
 **************************************
 
-Now that we've gotten all of the basics covered--let's create our first actual
+Now that we've gotten all the basics covered--let's create our first actual
 Heroku application!
 
 .. code-block:: console
