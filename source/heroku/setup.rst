@@ -102,11 +102,11 @@ Let's quickly add our personal account:
     Password (typing will be hidden):
     Generating new SSH key
     Generating public/private rsa key pair.
-    Created directory '/root/.ssh'.
-    Your identification has been saved in /root/.ssh/identity.heroku.rdegges.
-    Your public key has been saved in /root/.ssh/identity.heroku.rdegges.pub.
+    Created directory '/home/rdegges/.ssh'.
+    Your identification has been saved in /home/rdegges/.ssh/identity.heroku.rdegges.
+    Your public key has been saved in /home/rdegges/.ssh/identity.heroku.rdegges.pub.
     The key fingerprint is:
-    c3:b5:59:7f:4b:b5:c7:fb:59:eb:c6:c8:af:ac:7f:da root@rtest
+    c3:b5:59:7f:4b:b5:c7:fb:59:eb:c6:c8:af:ac:7f:da rdegges@baal
     The key's randomart image is:
     +--[ RSA 2048]----+
     |                 |
