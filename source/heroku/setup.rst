@@ -92,5 +92,42 @@ Once you've got ``heroku-accounts`` installed, you should be able to run
 As you can see, ``heroku-accounts`` provides several useful commands, ``add``,
 ``default``, ``remove``, and ``set``.
 
-Let's quickly add our personal account, and set is as the **default** on our
-box:
+Let's quickly add our personal account:
+
+.. code-block:: console
+
+    $ heroku accounts:add rdegges --auto
+    Enter your Heroku credentials.
+    Email: rdegges@gmail.com
+    Password (typing will be hidden):
+    Generating new SSH key
+    Generating public/private rsa key pair.
+    Created directory '/root/.ssh'.
+    Your identification has been saved in /root/.ssh/identity.heroku.rdegges.
+    Your public key has been saved in /root/.ssh/identity.heroku.rdegges.pub.
+    The key fingerprint is:
+    c3:b5:59:7f:4b:b5:c7:fb:59:eb:c6:c8:af:ac:7f:da root@rtest
+    The key's randomart image is:
+    +--[ RSA 2048]----+
+    |                 |
+    |                 |
+    |          . .   .|
+    |       . . + . .o|
+    |        S o   .o+|
+    |         .    ..+|
+    |            . oo.|
+    |            .o.+=|
+    |           .o=BE.|
+    +-----------------+
+    Adding entry to ~/.ssh/config
+    Adding public key to Heroku account: rdegges@gmail.com
+
+What happened here was that I created a new Heroku account (locally), and gave
+it the name ``rdegges``. Since this is my personal account, naming it
+``rdegges`` makes sense for me. If you've got multiple Heroku accounts, create
+them now.
+
+.. note::
+    When you add an account using ``heroku-accounts``, ``heroku-accounts`` will
+    automatically generate and upload a new SSH key to your Heroku account.
+    This way, you'll be able to push code to any applications you may have created.
