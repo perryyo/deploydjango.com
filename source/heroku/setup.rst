@@ -164,3 +164,37 @@ If you'd like to remove an account, just use the ``heroku accounts:remove`` comm
 
     $ heroku accounts
     * rdegges
+
+The last thing we're going to do here is specify which account we want our
+Django project to use. This way, the ``heroku`` command line tool will know
+which account to use when we're pushing code, adding infrastructure components,
+etc.
+
+Remember that Django project I talked about at the top of this section? The one
+that you've got version controlled with Git, and ready to be deployed? Go into
+the root of that project, and run the ``heroku accounts:set`` command:
+
+.. code-block:: console
+
+    $ cd ~/Code/rdegges/deploydjango
+
+    $ heroku account:set rdegges
+
+    $ cat .git/config
+    [core]
+            repositoryformatversion = 0
+            filemode = true
+            bare = false
+            logallrefupdates = true
+    [remote "origin"]
+            fetch = +refs/heads/*:refs/remotes/origin/*
+            url = git://github.com/rdegges/deploydjango.com.git
+    [branch "master"]
+            remote = origin
+            merge = refs/heads/master
+    [heroku]
+            account = rdegges
+
+Whenever you use the ``acccounts:set`` command, ``heroku-accounts`` will add a
+new section to your project's ``.git/config`` file, specifying which Heroku
+account to use whenever you're working on that project. Pretty nifty, right?
