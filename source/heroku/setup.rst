@@ -131,3 +131,36 @@ them now.
     When you add an account using ``heroku-accounts``, ``heroku-accounts`` will
     automatically generate and upload a new SSH key to your Heroku account.
     This way, you'll be able to push code to any of your Heroku applications.
+
+Now that we've got our account(s) created, we can list them by running ``heroku
+accounts`` without any options:
+
+.. code-block:: console
+
+    $ heroku accounts
+    rdegges
+    telephonyresearch
+
+If you want to set one account to by your system-wide default, you can do so
+via the ``heroku accounts:default`` command:
+
+.. code-block:: console
+
+    $ heroku accounts:default rdegges
+
+    $ heroku accounts
+    * rdegges
+    telephonyresearch
+
+As you can see, after an account is set as the default, it will have a ``*``
+next to it. You can change the default account at any time.
+
+If you'd like to remove an account, just use the ``heroku accounts:remove`` command:
+
+.. code-block:: console
+
+    $ heroku accounts:remove work
+    Account removed: telephonyresearch
+
+    $ heroku accounts
+    * rdegges
