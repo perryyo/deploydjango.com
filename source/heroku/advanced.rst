@@ -38,6 +38,39 @@ to immediately revoke their access:
     Collaborator removed.
 
 
+Listing Your Application's Information
+**************************************
+
+If you haven't worked on your application in a while, it's probably a good idea
+to view your application's status before doing anything. Heroku stores quite a
+bit of metadata about your application, so you can see stuff like:
+
+- What addons are installed.
+- What your database size is.
+- What domain names you've setup.
+- What your private Git repository URL is.
+- Who the owner of the application is.
+- Which collaborators (if any) are allowed to push code.
+- What your publicly available Heroku URL is.
+- etc.
+
+To view this information, just run the ``info`` command inside your application directory:
+
+.. code-block:: console
+
+    $ heroku info
+    === deploydjango
+    Addons:        PG Backups Auto - One Month Retention, Shared Database 5MB
+    Database Size: (empty)
+    Domain Name:   www.deploydjango.com
+    Git URL:       git@heroku.com:deploydjango.git
+    Owner:         rdegges@gmail.com
+    Repo Size:     40M
+    Slug Size:     6M
+    Stack:         cedar
+    Web URL:       http://deploydjango.herokuapp.com/
+
+
 Destroying Applications
 ***********************
 
