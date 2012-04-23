@@ -5,6 +5,39 @@ This section contains some slightly more advanced topics that didn't fit into
 the Setup section. Feel free to skip around to sections below that interest you.
 
 
+Adding Collaborators to Your Heroku Application
+***********************************************
+
+At some point, you'll most likely want to give another developer access to your
+project. Coding by yourself is great and all, but two heads are (often) better
+than one :)
+
+To add a collaborator to your project, you can use the ``sharing:add`` command:
+
+.. code-block:: console
+
+    $ heroku sharing:add yourfriend@blah.com
+    yourfriend@blah.com added as a collaborator on deploydjango.
+
+Collaborators will be able to push new code to your application, but won't be
+able to add new infrastructure components. For example: if I'm a collaborator
+on your application, I can push new features live, but I can't add a new
+PostgreSQL database (only the account owner can do that).
+
+
+Removing Collaborators
+**********************
+
+If you need to remove a collaborator from your account (maybe you and your
+co-founder weren't getting along), you can use the ``sharing:remove`` command
+to immediately revoke their access:
+
+.. code-block:: console
+
+    $ heroku sharing:remove yourfriend@blah.com
+    Collaborator removed.
+
+
 Destroying Applications
 ***********************
 
