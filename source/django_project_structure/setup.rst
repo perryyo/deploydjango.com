@@ -49,7 +49,7 @@ Now that we've seen a basic skeleton project, let's start making improvements.
 Managing Project Dependencies
 *****************************
 
-The first improvement we're going to make, is adding a ``requirements.txt``
+The first improvement we're going to make is adding a ``requirements.txt``
 file to our project. **Every** Django project should have a top-level
 ``requirements.txt`` file which fully lists **all** Python packages used in the
 project.
