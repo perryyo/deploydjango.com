@@ -42,3 +42,28 @@ Inside our ``djangolicious`` project directory, we've got:
   Django's built in ``runserver`` command.
 - An ``__init__.py`` file (which tells Python that this directory is a Python
   module).
+
+Now that we've seen a basic skeleton project, let's start making improvements.
+
+
+Managing Project Dependencies
+*****************************
+
+The first improvement we're going to make, is adding a ``requirements.txt``
+file to our project. **Every** Django project should have a top-level
+``requirements.txt`` file which fully lists **all** Python packages used in the
+project.
+
+This should include stuff like:
+
+- Django
+- South
+- django-celery
+- django-storages
+- etc.
+
+The idea of having a ``requirements.txt`` file is that any developer, as soon
+as they clone your project's Git repository--should be able to immediately look
+at your ``requirements.txt`` file and install all the packages listed therein.
+This way they can run your site locally, make changes, etc., without having to
+guess which versions of which packages are required for things to run smoothly.
