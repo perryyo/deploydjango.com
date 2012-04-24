@@ -49,4 +49,5 @@ Topics
     :maxdepth: 3
 
     heroku/index.rst
+    django_project_structure/index.rst
     postgresql/index.rst
