@@ -6,7 +6,7 @@ One of Heroku's oldest and most popular addons is their `PostgreSQL addon
 Heroku's hosted PostgreSQL service is "the largest and most reliable Postgres
 service in the world"?
 
-.. include:: about.rst
+.. include:: overview.rst
 .. include:: setup.rst
 .. include:: advanced.rst
 .. include:: resources.rst

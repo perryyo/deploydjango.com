@@ -1,5 +1,5 @@
-About
------
+Overview
+--------
 
 The `Heroku PostgreSQL service <https://addons.heroku.com/heroku-postgresql>`_
 allows you to easily create, destroy, resize, backup, restore, and scale your

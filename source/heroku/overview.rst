@@ -1,5 +1,5 @@
-About
------
+Overview
+--------
 
 `Heroku <http://www.heroku.com/>`_ is a popular platform-as-a-service provider
 that's been around since 2007, providing simplistic web application hosting for
