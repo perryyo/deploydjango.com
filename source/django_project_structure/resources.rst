@@ -33,8 +33,8 @@ Django Books
 - `Django 1.1 Testing and Debugging
   <http://www.amazon.com/gp/product/1847197566/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847197566>`_
 
-I highly, highly recommend that even if you're an advanced Django programmer
-you read through `Django 1.1 Testing and Debugging
+I highly, **highly** recommend that even if you're an advanced Django
+programmer you read through `Django 1.1 Testing and Debugging
 <http://www.amazon.com/gp/product/1847197566/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847197566>`_,
 if nothing else. It is my favorite book on Django, and covers an incredible
 amount of material that is absolutely indispensable.
