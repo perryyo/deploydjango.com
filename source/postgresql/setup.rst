@@ -6,7 +6,7 @@ Heroku application setup, and that you're using the `Heroku CLI tool
 <https://toolbelt.heroku.com/>`_.
 
 
-Bootstraping a Database
+Bootstrapping a Database
 ***********************
 
 To get started, let's bootstrap a new PostgreSQL server instance. In the
