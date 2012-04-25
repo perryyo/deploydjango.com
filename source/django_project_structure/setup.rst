@@ -67,3 +67,83 @@ as they clone your project's Git repository--should be able to immediately look
 at your ``requirements.txt`` file and install all the packages listed therein.
 This way they can run your site locally, make changes, etc., without having to
 guess which versions of which packages are required for things to run smoothly.
+
+Now that you know why we need one, let's do it! Be sure to follow along with
+your own project as we go.
+
+
+Step 1 - Think Modular
+^^^^^^^^^^^^^^^^^^^^^^
+
+Now, having a top-level ``requirements.txt`` file is mandatory, but so is
+keeping our dependencies easy to manage.
+
+What does this mean? Well, in all likelihood, your develpment environment
+requires different dependencies than your production requirement. Sure, you
+*could* throw both your development **and** production requirements into a
+single ``requirements.txt`` file, but that makes things difficult to maintain
+over time.
+
+Instead, it's best to organize your requirements by the environment in which
+they're used.
+
+Here's what we'll do (inside the root of our ``djangolicious`` directory):
+
+.. code-block:: console
+
+    $ ls
+    djangolicious  manage.py
+    $ touch requirements.txt
+    $ mkdir requirements
+    $ touch requirements/{common.txt,dev.txt,prod,txt,test.txt}
+    $ tree .
+    .
+    ├── djangolicious
+    │   ├── __init__.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── manage.py
+    ├── requirements
+    │   ├── common.txt
+    │   ├── dev.txt
+    │   ├── prod.txt
+    │   └── test.txt
+    └── requirements.txt
+
+    2 directories, 10 files
+
+As you can see, I created a new top-level directory, ``requirements``, which
+holds a variable amount requirement files: one for each environment.
+
+If your app only has a development environment, then only include a ``dev.txt``
+file. If your app has development, production, testing, tom, and rudy--then
+create a single ``.txt`` file for each of them.
+
+.. note::
+    The special file ``common.txt`` is meant to hold all dependencies that are
+    commonly shared between all other environments. For example, Django. Since
+    Django is needed in **all** of your environments, regardless of whether or
+    not you're in development or production, you'd put it here.
+
+Having our requirements files separate means that if I'm a developer working on
+the project in my local environment **only**, I can simply install the
+``requirements/dev.txt`` dependencies, and avoid installing the others (for
+production, staging, testing, whatever).
+
+*But why do I care how many requirements I have to install? Why don't I just
+install them all?*
+
+- Installing requirements can take a long time. In big projects, this equates
+  to large chunks of time (30 minutes plus).
+
+- Many requirements depend on external software and libraries to be installed
+  on your local system in order to build. This means that avoiding installing
+  libraries can not only save you time, but also save you massive headaches,
+  like figuring out which version of ``libxml2`` and ``libpq-dev`` you need
+  installed for your equivalent Python libraries to build.
+
+- It lowers the barrier to entry for new project developers. If you've got a
+  new developer working on your project, attempting to submit code, it is a
+  lot simpler for them to install a few things and get working right away than
+  to install **everything** and have trouble getting *anything* working.
