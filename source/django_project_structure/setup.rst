@@ -54,13 +54,21 @@ file to our project. **Every** Django project should have a top-level
 ``requirements.txt`` file which fully lists **all** Python packages used in the
 project.
 
+.. note::
+    If you aren't familiar with requirements files, you should read through the
+    official `pip <http://www.pip-installer.org/en/latest/>`_ documentation, as
+    pip is the best practices way to install your Python packages.
+
 This should include stuff like:
 
-- Django
-- South
-- django-celery
-- django-storages
-- etc.
+.. code-block:: text
+
+    Django==1.4
+    psycopg2==2.4.5
+    South==0.7.3
+    gunicorn==0.14.1
+    newrelic==1.2.0.246
+    django-celery==2.4.2
 
 The idea of having a ``requirements.txt`` file is that any developer, as soon
 as they clone your project's Git repository--should be able to immediately look
