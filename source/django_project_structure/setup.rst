@@ -155,3 +155,33 @@ install them all?*
   new developer working on your project, attempting to submit code, it is a
   lot simpler for them to install a few things and get working right away than
   to install **everything** and have trouble getting *anything* working.
+
+
+Step 2 - The Heroku Pattern
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Now that we've established our modular requirements, exactly how do we tell
+our top-level ``requirements.txt`` file to include all of our others?*
+
+Thankfully, `pip <http://www.pip-installer.org/en/latest/>`_ already has this
+problem solved.
+
+Open up your main ``requirements.txt`` file and enter the following:
+
+.. code-block:: text
+
+    # Install all of our production dependencies only.
+    -r requirements/prod.txt
+
+.. note::
+    The ``-r`` flag tells pip that the following relative path is another
+    requirments file to parse.
+
+The way requirements work on Heroku is that each time you push your code to
+Heroku, Heroku will analyze your top-level ``requirements.txt`` file and
+install whatever dependencies are listed.
+
+Since we're only going to use Heroku to deploy our production software (we'll
+do our development and testing locally throughout this book), I'm **only**
+including the ``requirements/prod.txt`` file, so that Heroku **only** installs
+our production dependencies.
