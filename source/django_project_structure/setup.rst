@@ -175,7 +175,7 @@ Open up your main ``requirements.txt`` file and enter the following:
 
 .. note::
     The ``-r`` flag tells pip that the following relative path is another
-    requirments file to parse.
+    requirements file to parse.
 
 The way requirements work on Heroku is that each time you push your code to
 Heroku, Heroku will analyze your top-level ``requirements.txt`` file and
