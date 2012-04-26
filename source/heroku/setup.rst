@@ -215,15 +215,15 @@ Heroku application!
     http://deploydjango.herokuapp.com/ | git@heroku.com:deploydjango.git
     Git remote heroku added
 
-Easy, right? And just incase you're wondering--Heroku has multiple "stacks",
+Easy, right? And just in case you're wondering--Heroku has multiple "stacks",
 the most recent of which is ``cedar``. You can read more about the Heroku cedar
 stack `here <https://devcenter.heroku.com/articles/cedar>`_.
 
 Also, notice that when you created your app, Heroku automatically generated a
-projet URL as well as a private Git repository.
+project URL as well as a private Git repository.
 
 Your project URL, (http://deploydjango.herokuapp.com/) is a publicly available
-URL that you can use to visit your site over the internet.
+URL that you can use to visit your site over the Internet.
 
 The private Git repository (``git@heroku.com:deploydjango.git``) is a Git
 repository stored on Heroku's servers that you'll use to deploy new versions
