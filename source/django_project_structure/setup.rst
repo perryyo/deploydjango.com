@@ -103,7 +103,7 @@ Here's what we'll do (inside the root of our ``djangolicious`` directory):
     djangolicious  manage.py
     $ touch requirements.txt
     $ mkdir requirements
-    $ touch requirements/{common.txt,dev.txt,prod,txt,test.txt}
+    $ touch requirements/{common.txt,dev.txt,prod.txt,test.txt}
     $ tree .
     .
     ├── djangolicious
