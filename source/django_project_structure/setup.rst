@@ -86,7 +86,7 @@ Step 1 - Think Modular
 Now, having a top-level ``requirements.txt`` file is mandatory, but so is
 keeping our dependencies easy to manage.
 
-What does this mean? Well, in all likelihood, your develpment environment
+What does this mean? Well, in all likelihood, your development environment
 requires different dependencies than your production environment. Sure, you
 *could* throw both your development **and** production requirements into a
 single ``requirements.txt`` file, but that makes things difficult to maintain
