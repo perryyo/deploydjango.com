@@ -55,9 +55,9 @@ file to our project. **Every** Django project should have a top-level
 project.
 
 .. note::
-    If you aren't familiar with requirements files, you should read through the
-    official `pip <http://www.pip-installer.org/en/latest/>`_ documentation, as
-    pip is the best practices way to install your Python packages.
+    If you aren't familiar with requirements files, you should read through
+    `Heroku's guide <https://devcenter.heroku.com/articles/python-pip>`_ to
+    managing Python dependencies with pip.
 
 This should include stuff like:
 
