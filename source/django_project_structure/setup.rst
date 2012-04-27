@@ -156,6 +156,130 @@ install them all?*
   to install **everything** and have trouble getting *anything* working.
 
 
+Step 2 - Define Your Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+So, now that we know why modular requirements rock, let's see what they
+actually look like in practice.
+
+Below I've specified 4 requirements files taken from actual projects I've
+worked on. I'll explain them as we go.
+
+First up, our ``requirements/common.txt`` file. This file holds all of our
+**shared** requirements--basically, any program needed in all of your
+environments (development, production, testing, whatever):
+
+.. code-block:: text
+
+    # requirements/common.txt
+    Django==1.4
+    django-cache-machine==0.6
+    django-celery==2.5.5
+    django-dajaxice==0.2
+    django-guardian==1.0.4
+    django-kombu==0.9.4
+    django-pagination==1.0.7
+    django-sorting==0.1
+    django-tastypie==0.9.11
+    Fabric==1.4.1
+    lxml==2.3.4
+    pyst2==0.4
+    South==0.7.4
+    Sphinx==1.1.3
+
+As you can see, the stuff I've included is all stuff that is essentially
+required for my Django site to run, no matter what. If I don't have any of
+these, my site will not work.
+
+The next file below is my ``requirements/dev.txt`` file, which holds all of my
+development only dependencies. These are things that I need, but only when I'm
+developing code locally:
+
+.. code-block:: text
+
+    # requirements/dev.txt
+    -r common.txt
+    django-debug-toolbar==0.9.4
+
+In my development environment, I typically use a simple SQLite3 database (so I
+have no reason to include any special drivers), and the excellent
+``django-debug-toolbar`` package which allows me to inspect DB queries,
+performance issues, etc.
+
+And incase you're wondering--the first line, ``-r common.txt`` tells ``pip`` to
+include all of my common dependencies in addition to the dependencies I have
+listed below.
+
+This allows me to run ``pip install -r requirements/dev.txt`` from the command
+line to install all of my development requirements:
+
+.. code-block:: console
+
+    $ pip install -r requirements/dev.txt
+    Downloading/unpacking Django==1.4 (from -r requirements/common.txt (line 1))
+      Downloading Django-1.4.tar.gz (7.6Mb): 7.6Mb downloaded
+      Running setup.py egg_info for package Django
+
+    Downloading/unpacking django-cache-machine==0.6 (from -r requirements/common.txt (line 2))
+      Downloading django-cache-machine-0.6.tar.gz
+      Running setup.py egg_info for package django-cache-machine
+
+    ... snipped for brevity ...
+
+As you can see above, it actually works! When we ``pip`` install our
+``requirements/dev.txt`` file, it successfully intalls not only our development
+dependencies (eg: ``django-debug-toolbar``), but also our ``common.txt``
+dependencies! Beautiful!
+
+Below is a sample ``requirements/prod.txt`` requirements file which specifies
+all production dependencies **and** common dependencies:
+
+.. code-block:: text
+
+    # requirements/prod.txt
+    -r common.txt
+    boto==2.1.1
+    cssmin==0.1.4
+    django-compressor==1.1.2
+    django-htmlmin==0.5.1
+    django-pylibmc-sasl==0.2.4
+    django-storages==1.1.3
+    gunicorn==0.14.1
+    newrelic==1.2.0.246
+    psycopg2==2.4.5
+    pylibmc==1.2.2
+    raven==1.3.5
+    slimit==0.6
+
+And lastly, here is one of my old ``requirements/test.txt`` files, which
+provides test specific dependencies. These packages are only used for running
+unit tests against my project:
+
+.. code-block:: text
+
+    # requirements/test.txt
+    -r common.txt
+    django-coverage==1.2.2
+    django-nose==0.1.3
+    mock==0.8.0
+    nosexcover==1.0.7
+
+- If I was going to run my code locally for development, I'd install my
+  ``requirements/dev.txt`` dependencies.
+
+- If I was going to run my code in production, I'd install my
+  ``requirements/prod.txt`` dependencies.
+
+- If I was going to do some testing on my code, I'd install my
+  ``requirements/test.txt`` dependencies.
+
+You get the idea. The main point here is that breaking up your dependencies is:
+
+- Easy.
+- Powerful.
+- Intuitive.
+
+
 Step 3 - The Heroku Pattern
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -171,10 +295,6 @@ Open up your main ``requirements.txt`` file and enter the following:
 
     # Install all of our production dependencies only.
     -r requirements/prod.txt
-
-.. note::
-    The ``-r`` flag tells pip that this isn't a Python package, but a path to
-    another requirements file.
 
 The way requirements work on Heroku is that each time you push your code to
 Heroku, Heroku will analyze your top-level ``requirements.txt`` file and
