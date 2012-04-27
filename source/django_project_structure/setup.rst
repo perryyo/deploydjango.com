@@ -280,27 +280,36 @@ You get the idea. The main point here is that breaking up your dependencies is:
 - Intuitive.
 
 
-Step 3 - The Heroku Pattern
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3 - Heroku Best Practices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Now that we've established our modular requirements, exactly how do we tell
-our top-level ``requirements.txt`` file to include all of our others?*
+Now that we've got our requirements files all modularized, I bet you're
+thinking: **Why even bother with a top-level ``requirements.txt`` file?**
 
-Thankfully, `pip <http://www.pip-installer.org/en/latest/>`_ already has this
-problem solved.
+So, here's the deal:
 
-Open up your main ``requirements.txt`` file and enter the following:
+- Having a top-level ``requirements.txt`` is a standard.
+- Heroku automatically reads your top-level ``requirements.txt`` file everytime
+  you deploy your project (which we'll talk about in the next
+  chapter) and installs any dependencies listed in it.
+
+Since Heroku will install whatever is defined in your ``requirements.txt``
+file, this gives you a few choices:
+
+- Make Heroku install *all* of your dependencies: ``common.txt``, ``dev.txt``,
+  ``prod.txt``, etc...
+- Have Heroku *only* install the dependencies it needs.
+
+Since we're only going to use Heroku for deploying our production quality
+(live) website, it's best to have Heroku install *only* what it needs.
+
+This will make future deployments faster, since Heroku has less things to do.
+
+Open up your top-level ``requirements.txt`` file and enter the following:
 
 .. code-block:: text
 
     # Install all of our production dependencies only.
     -r requirements/prod.txt
 
-The way requirements work on Heroku is that each time you push your code to
-Heroku, Heroku will analyze your top-level ``requirements.txt`` file and
-install whatever dependencies are listed.
-
-Since we're only going to use Heroku to deploy our production software (we'll
-do our development and testing locally throughout this book), I'm **only**
-including the ``requirements/prod.txt`` file, so that Heroku **only** installs
-our production dependencies.
+This way, Heroku will do exactly what we want it to: install our production software.
