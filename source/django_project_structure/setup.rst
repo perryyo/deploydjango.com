@@ -76,8 +76,7 @@ at your ``requirements.txt`` file and install all the packages listed therein.
 This way they can run your site locally, make changes, etc., without having to
 guess which versions of which packages are required for things to run smoothly.
 
-Now that you know why we need one, let's do it! Be sure to follow along with
-your own project as we go.
+Now that you know why we need one, let's do it!
 
 
 Step 1 - Think Modular
