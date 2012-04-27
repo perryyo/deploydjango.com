@@ -313,3 +313,168 @@ Open up your top-level ``requirements.txt`` file and enter the following:
     -r requirements/prod.txt
 
 This way, Heroku will do exactly what we want it to: install our production software.
+
+
+Separating Applications and Libraries
+*************************************
+
+The next step in managing any great Django project is separating your
+applications from your libraries.
+
+As you know, every Django project is comprised of a series of applications.
+Some of these applications have models, views, etc. Some of these applications
+are simple *helpers*, which provide various tidbits of functionality that you
+need across all of your apps, and can't seem to find a good place to put.
+
+Often times, these *helper* applications provide nothing more than `custom
+templatetags <https://docs.djangoproject.com/en/dev/howto/custom-template-tags/>`_,
+`management commands <https://docs.djangoproject.com/en/dev/howto/custom-management-commands/>`_,
+and other bits of code that, while necessary, don't really belong in your other
+applications.
+
+Luckily, there is a simple way to structure your Django project so that:
+
+- Developers can easily find all of your custom Django applications.
+- Developers can easily find all of your custom Django libraries (*helpers*).
+- Your main project directory isn't filled with tons of custom applications,
+  cluttering your tree structure and making it difficult to find what you're
+  looking for.
+
+In every Django project, I like to create two additional directories, ``apps``
+and ``libs``, inside of my main project directory, which I use to hold my
+Django applications and libraries, respectively.
+
+Going back to our ``djangolicious`` example, here's what we'll do:
+
+.. code-block:: console
+
+    $ mkdir djangolicious/apps
+    $ mkdir djangolicious/libs
+    $ touch djangolicious/apps/__init__.py
+    $ touch djangolicious/libs/__init__.py
+    $ tree .
+    .
+    ├── djangolicious
+    │   ├── apps
+    │   │   └── __init__.py
+    │   ├── __init__.py
+    │   ├── libs
+    │   │   └── __init__.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── manage.py
+    ├── requirements
+    │   ├── common.txt
+    │   ├── dev.txt
+    │   ├── prod.txt
+    │   └── test.txt
+    └── requirements.txt
+
+    4 directories, 12 files
+
+As you can see above, our ``djangolicious`` project has our new ``apps`` and
+``libs`` modules created. Now all we have to do is move our Django applications
+and libraries into their proper places.
+
+Since we're using the ``djangolicious`` example here, I'll just go ahead and
+create a few Django apps and libraries so that we have something--however, now
+is a good time for you to move your Django applications and libraries to their
+proper places as well :)
+
+.. code-block:: console
+
+    $ cd djangolicious/apps
+    $ django-admin.py startapp blog
+    $ django-admin.py startapp reader
+    $ django-admin.py startapp news
+    $ cd ../libs
+    $ django-admin.py startapp management
+    $ django-admin.py startapp display
+    $ cd ../..
+    $ tree .
+    .
+    ├── djangolicious
+    │   ├── apps
+    │   │   ├── blog
+    │   │   │   ├── __init__.py
+    │   │   │   ├── models.py
+    │   │   │   ├── tests.py
+    │   │   │   └── views.py
+    │   │   ├── __init__.py
+    │   │   ├── news
+    │   │   │   ├── __init__.py
+    │   │   │   ├── models.py
+    │   │   │   ├── tests.py
+    │   │   │   └── views.py
+    │   │   └── reader
+    │   │       ├── __init__.py
+    │   │       ├── models.py
+    │   │       ├── tests.py
+    │   │       └── views.py
+    │   ├── __init__.py
+    │   ├── libs
+    │   │   ├── display
+    │   │   │   ├── __init__.py
+    │   │   │   ├── models.py
+    │   │   │   ├── tests.py
+    │   │   │   └── views.py
+    │   │   ├── __init__.py
+    │   │   └── management
+    │   │       ├── __init__.py
+    │   │       ├── models.py
+    │   │       ├── tests.py
+    │   │       └── views.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── manage.py
+    ├── requirements
+    │   ├── common.txt
+    │   ├── dev.txt
+    │   ├── prod.txt
+    │   └── test.txt
+    └── requirements.txt
+
+    9 directories, 32 files
+
+Now our project is starting to have some real structure! We've got our Django
+applications and libraries nicely separated out. This way, not only is it easy
+to find the application (or library) you're working on, but the main project
+directory isn't cluttered at all.
+
+The last step in moving our applications and libraries around is to update our
+import paths. If you previous had written:
+
+.. code-block:: python
+
+    # blog/views.py
+    from djangolicious.news.models import Newspaper
+    from djangolicious.display.templatetags import top_stories
+
+You'll have to switch your import path to say:
+
+.. code-block:: python
+
+    # blog/views.py
+    from djangolicious.apps.news.models import Newspaper
+    from djangolicious.libs.display.templatetags import top_stories
+
+Although the import statement is slightly longer, I find that it's incredibly
+useful to me (as a developer) to instantly know by looking at my imports which
+apps I'm using, which libraries I'm using, and where to find their source if I
+need to make changes.
+
+You'll also need to update your ``settings`` file to include your new
+application paths:
+
+.. code-block:: python
+
+    # settings.py
+    INSTALLED_APPS = (
+        ...
+        'djangolicious.apps.blog',
+        'djangolicious.apps.news',
+        'djangolicious.apps.reader',
+        ...
+    )
