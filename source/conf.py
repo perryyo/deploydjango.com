@@ -106,7 +106,7 @@ html_style = 'deploydjango.css'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'The Definitive Guide to Deploying Django Applications in the Cloud'
+html_title = 'The Definitive Guide to Deploying Django Applications on Heroku'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_short_title = 'Deploy Django'
@@ -235,7 +235,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'Deploy Django', u'Deploy Django ',
-   u'', 'Deploy Django', 'The Definitive Guide to Deploying Django Applications in the Cloud',
+   u'', 'Deploy Django', 'The Definitive Guide to Deploying Django Applications on Heroku',
    'Miscellaneous'),
 ]
 
