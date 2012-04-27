@@ -284,7 +284,7 @@ Step 3 - Heroku Best Practices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that we've got our requirements files all modularized, I bet you're
-thinking: **Why even bother with a top-level ``requirements.txt`` file?**
+thinking: *Why even bother with a top-level ``requirements.txt`` file?*
 
 So, here's the deal:
 
@@ -296,12 +296,12 @@ So, here's the deal:
 Since Heroku will install whatever is defined in your ``requirements.txt``
 file, this gives you a few choices:
 
-- Make Heroku install *all* of your dependencies: ``common.txt``, ``dev.txt``,
-  ``prod.txt``, etc...
-- Have Heroku *only* install the dependencies it needs.
+- Make Heroku install **all** of your dependencies: ``common.txt``,
+  ``dev.txt``, ``prod.txt``, etc...
+- Have Heroku **only** install the dependencies it needs.
 
 Since we're only going to use Heroku for deploying our production quality
-(live) website, it's best to have Heroku install *only* what it needs.
+(live) website, it's best to have Heroku install **only** what it needs.
 
 This will make future deployments faster, since Heroku has less things to do.
 
