@@ -173,8 +173,8 @@ Open up your main ``requirements.txt`` file and enter the following:
     -r requirements/prod.txt
 
 .. note::
-    The ``-r`` flag tells pip that the following relative path is another
-    requirements file to parse.
+    The ``-r`` flag tells pip that this isn't a Python package, but a path to
+    another requirements file.
 
 The way requirements work on Heroku is that each time you push your code to
 Heroku, Heroku will analyze your top-level ``requirements.txt`` file and
@@ -184,3 +184,6 @@ Since we're only going to use Heroku to deploy our production software (we'll
 do our development and testing locally throughout this book), I'm **only**
 including the ``requirements/prod.txt`` file, so that Heroku **only** installs
 our production dependencies.
+
+
+
