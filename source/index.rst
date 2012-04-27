@@ -42,6 +42,43 @@ to support millions of users.
     (or requests) to rdegges@gmail.com.
 
 
+Who This Book is For
+--------------------
+
+Unfortunately, since deployment is such a broad topic, this book isn't suited
+for everyone. To keep things reasonably simple throughout this book, I'm going
+to make the following assumptions:
+
+- You are familiar with Django and Python. You don't have to be great, but you
+  should be familiar with them, and have written at least one Django website
+  before.
+
+- You are comfortable using the command line, and you've used Linux before. I'm
+  not going to cover any GUI tools in this book--we'll be dealing stricly with
+  command line stuff.
+
+- You are willing to get your hands dirty--the best way to learn about
+  deployment is to actually deploy something you've written. While this book
+  has a lot of great information, it will be useless to you unless you follow
+  along with the examples as we go :)
+
+If you're a new Python or Django programmer, and you haven't yet written a
+website of your own, please read through the following books (in order) and
+then return to this one, as you'll be a whole lot more knowledgeable and will
+be able to fully understand the concepts explained here:
+
+- `Learn Python the Hard Way <http://learnpythonthehardway.org/>`_
+- `Django 1.0 Web Site Development <http://www.amazon.com/gp/product/1847196780/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847196780>`_
+- `Practical Django Projects <http://www.amazon.com/gp/product/1430219386/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1430219386>`_
+- `Pro Django <http://www.amazon.com/gp/product/1430210478/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1430210478>`_
+- `Django 1.1 Testing and Debugging <http://www.amazon.com/gp/product/1847197566/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847197566>`_
+
+Reading through those books in order is enough to take any programmer
+(regardless of skillset) from beginner to pro.
+
+Now that we've got that out of the way, let's deploy some Django!
+
+
 Topics
 ------
 
