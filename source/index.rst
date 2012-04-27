@@ -1,7 +1,7 @@
 Deploy Django
 =============
 
-*Useful patterns for deploying Django on Heroku.*
+*The definitive guide to deploying Django applications in the cloud.*
 
 
 Welcome
