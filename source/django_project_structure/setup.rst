@@ -156,7 +156,7 @@ install them all?*
   to install **everything** and have trouble getting *anything* working.
 
 
-Step 2 - The Heroku Pattern
+Step 3 - The Heroku Pattern
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Now that we've established our modular requirements, exactly how do we tell
@@ -184,6 +184,3 @@ Since we're only going to use Heroku to deploy our production software (we'll
 do our development and testing locally throughout this book), I'm **only**
 including the ``requirements/prod.txt`` file, so that Heroku **only** installs
 our production dependencies.
-
-
-
