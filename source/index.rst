@@ -32,7 +32,7 @@ simple, elegant, and scalable platform that makes deploying your Django
 websites as painless as possible.
 
 The goal of this site is to **help you** get up and running as quickly as
-possible, while teaching you the basics along the way. Our hope is that you'll
+possible, while teaching you the basics along the way. My hope is that you'll
 find this site useful, and that it will provide you with enough information to
 not only deploy your Django sites, but also to maintain, grow, and scale them
 to support millions of users.
