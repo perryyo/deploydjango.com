@@ -491,3 +491,16 @@ opinion on, and everyone argues about.
 **one true way** to build the perfect Django settings module, regardless of
 your project size, requirements, or any other factors. If anyone *thinks*
 they've got a better way to do it, redirect them here >:)
+
+The settings module we're about to build will:
+
+- Allow you to easily separate your Django environments (development,
+  production, testing, etc.).
+
+- Allow you to keep *all* your configuration information in version control
+  (none of that ``local_settings.py`` crap).
+
+- Allow you to decouple passwords and other credentials from your codebase
+  using environment variables.
+
+- Make altering and adjusting settings a lot simpler.
