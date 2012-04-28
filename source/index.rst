@@ -73,8 +73,9 @@ be able to fully understand the concepts explained here:
 - `Pro Django <http://www.amazon.com/gp/product/1430210478/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1430210478>`_
 - `Django 1.1 Testing and Debugging <http://www.amazon.com/gp/product/1847197566/ref=as_li_ss_tl?ie=UTF8&tag=rdegges-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847197566>`_
 
-Or, if you prefer a more visual learning aid, try the `Go Django
-<http://godjango.com/>`_ screencasts.
+.. note::
+    If you prefer a more visual learning aid, try the `Go Django
+    <http://godjango.com/>`_ screencasts.
 
 Reading through those books in order is enough to take any programmer
 (regardless of skillset) from beginner to pro.
