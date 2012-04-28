@@ -487,7 +487,7 @@ Building the *perfect* Django settings module is often considered the "holy
 grail" of Django development. It's something that everyone has their own
 opinion on, and everyone argues about.
 
-**Unfortunately, most people do it wrong**.
+**Unfortunately, most people do it totally wrong**.
 
 Right now I'm going to show you the **one true way** to build the perfect
 Django settings module, regardless of your project size, requirements, or any
