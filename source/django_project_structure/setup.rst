@@ -506,3 +506,78 @@ The settings module we're about to build will:
   using environment variables.
 
 - Make altering and adjusting settings a lot simpler.
+
+Let's get started.
+
+
+Step 1 - Modular, Modular, Modular!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Just like we did with our requirements files earlier in the chapter, our
+settings module needs to be modular!
+
+To get started, let's get rid of that annoying ``settings.py`` script that
+Django ships with and replace it with a much nicer directory structure:
+
+.. code-block:: console
+
+    $ rm djangolicious/settings.py
+    $ mkdir djangolicious/settings
+    $ touch djangolicious/settings/{__init__.py,common.py,dev.py,prod.py,test.py}
+    $ tree .
+    .
+    ├── djangolicious
+    │   ├── apps
+    │   │   ├── blog
+    │   │   │   ├── __init__.py
+    │   │   │   ├── models.py
+    │   │   │   ├── tests.py
+    │   │   │   └── views.py
+    │   │   ├── __init__.py
+    │   │   ├── news
+    │   │   │   ├── __init__.py
+    │   │   │   ├── models.py
+    │   │   │   ├── tests.py
+    │   │   │   └── views.py
+    │   │   └── reader
+    │   │       ├── __init__.py
+    │   │       ├── models.py
+    │   │       ├── tests.py
+    │   │       └── views.py
+    │   ├── __init__.py
+    │   ├── libs
+    │   │   ├── display
+    │   │   │   ├── __init__.py
+    │   │   │   ├── models.py
+    │   │   │   ├── tests.py
+    │   │   │   └── views.py
+    │   │   ├── __init__.py
+    │   │   └── management
+    │   │       ├── __init__.py
+    │   │       ├── models.py
+    │   │       ├── tests.py
+    │   │       └── views.py
+    │   ├── settings
+    │   │   ├── common.py
+    │   │   ├── dev.py
+    │   │   ├── __init__.py
+    │   │   ├── prod.py
+    │   │   └── test.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── manage.py
+    ├── requirements
+    │   ├── common.txt
+    │   ├── dev.txt
+    │   ├── prod.txt
+    │   └── test.txt
+    └── requirements.txt
+
+    10 directories, 36 files
+
+Much like our requirements, our settings module should have one file for each
+environment (``dev.py``, ``prod.py``, ``test.py``), and one extra file for all
+shared settings (``common.py``).
+
+To be specific--your requirements directory and settings directory should
+mirror each other precisely.
